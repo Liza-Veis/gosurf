@@ -21,7 +21,6 @@
   position: absolute;
   right: 80px;
   bottom: 116px;
-  text-transform: uppercase;
   text-align: right;
 }
 .slider-item__info-suptitle {
@@ -80,6 +79,7 @@
   &__name {
     line-height: 19px;
     font-weight: 300;
+    text-transform: capitalize;
   }
 }
 .header__aside {
@@ -95,7 +95,6 @@
   font-weight: 800;
   font-size: 200px;
   line-height: 156px;
-  text-transform: uppercase;
   opacity: 0.07;
   max-width: 467px;
   position: absolute;
@@ -113,6 +112,7 @@
     letter-spacing: 1.4px;
     padding-top: 6px;
     margin-bottom: 20px;
+    text-transform: capitalize;
   }
 }
 .header__date {
@@ -141,6 +141,7 @@
   letter-spacing: 1.05px;
   position: relative;
   padding-left: 19px;
+  text-transform: capitalize;
   &::before {
     content: "";
     position: absolute;
@@ -171,6 +172,91 @@
 @keyframes animdash {
   to {
     stroke-dashoffset: 0;
+  }
+}
+.surf {
+  padding: 160px 0 120px;
+  background-image: url(../img/surf-bg.png);
+  background-position: right 200px;
+  background-repeat: no-repeat;
+}
+.surf__subtitle {
+  text-align: right;
+  padding-right: 80px;
+  margin-top: -86px;
+}
+.surf-slider {
+  padding-top: 110px;
+  .slider-arrows {
+    top: 50px;
+    opacity: 0.25;
+  }
+  .slick-slide:nth-child(4n + 1) {
+    .surf-box {
+      margin-top: 32px;
+    }
+  }
+  .slick-slide:nth-child(4n + 3) {
+    .surf-box {
+      margin-top: 89px;
+    }
+  }
+  .slick-current {
+    .surf-box__inner-btn {
+      display: block;
+    }
+    .surf-box__inner {
+      background: rgba(#1c2121, 0.3);
+    }
+  }
+}
+.surf-box {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__inner {
+    min-height: 750px;
+    background: rgba(#1c2121, 0.85);
+    position: relative;
+    top: 0;
+    bottom: 0;
+    transition: all 0.5s;
+    &:hover {
+      background: rgba(#1c2121, 0.3);
+      .surf-box__inner-btn {
+        display: block;
+      }
+    }
+    &-title {
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 36px;
+      padding: 72px 0 0 40px;
+      width: 140px;
+    }
+    &-location {
+      position: absolute;
+      left: 40px;
+      bottom: 80px;
+      height: 0;
+      width: 0;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 8px;
+      transform: rotate(-90deg);
+      white-space: nowrap;
+      span {
+        font-weight: 100;
+      }
+    }
+    &-btn {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
   }
 }
 
