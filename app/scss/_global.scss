@@ -7,6 +7,13 @@ body {
 a {
 	display: inline-block;
 	text-decoration: none;
+	color: #fff;
+}
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 .suptitle-left {
 	font-size: 22px;
