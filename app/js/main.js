@@ -21,24 +21,40 @@ $(function () {
       ' <img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="" />',
     nextArrow:
       ' <img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="" />',
-    asNavFor: ".slider-map, .holder__slider",
-    initialSlide: 1,
+    asNavFor: ".slider-map, .travel .holder__slider, .sleep .holder__slider",
   });
   $(".slider-map").slick({
     slidesToShow: 8,
     slidesToScroll: 1,
     arrows: false,
-    asNavFor: ".surf-slider, .holder__slider",
+    asNavFor: ".surf-slider, .travel .holder__slider, .sleep .holder__slider",
     focusOnSelect: true,
   });
-  $(".holder__slider").slick({
+  $(".travel .holder__slider").slick({
     infinite: true,
     fade: true,
     prevArrow:
       ' <img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="" />',
     nextArrow:
       ' <img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="" />',
-    asNavFor: ".surf-slider, .slider-map",
+    asNavFor: ".surf-slider, .slider-map, .sleep .holder__slider",
+  });
+  $(".sleep .holder__slider").slick({
+    infinite: true,
+    fade: true,
+    prevArrow:
+      ' <img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="" />',
+    nextArrow:
+      ' <img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="" />',
+    asNavFor: ".surf-slider, .slider-map, .travel .holder__slider",
+  });
+  $(".shop__slider").slick({
+    infinite: true,
+    fade: true,
+    prevArrow:
+      ' <img class="slider-arrows slider-arrows__left" src="img/arrow-left.svg" alt="" />',
+    nextArrow:
+      ' <img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="" />',
   });
 
   jQuery(
@@ -81,9 +97,13 @@ $(function () {
       $(".summ", parents).data("nights") *
       $(".nights", parents).val() *
       $(".guests", parents).val();
-    $(".summ", parents).html("$" + summ);
+    $(".summ", parents).html("$" + Math.ceil(summ));
   }
 
   $(".quantity").each(calcSumm);
   $(".quantity-button").on("click", calcSumm);
+
+  $(".surfboard-box__circle").on("click", function () {
+    $(this).toggleClass("active");
+  });
 });
