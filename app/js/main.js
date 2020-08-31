@@ -104,6 +104,9 @@ $(function () {
   $(".quantity-button").on("click", calcSumm);
 
   $(".surfboard-box__circle").on("click", function () {
+    if (this !== document.querySelector(".surfboard-box__circle.active")) {
+      $(".surfboard-box__circle.active").toggleClass("active");
+    }
     $(this).toggleClass("active");
   });
 });
