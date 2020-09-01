@@ -12,6 +12,12 @@ $(function () {
     slidesToShow: 4,
     slidesToScroll: 4,
     asNavFor: ".header__slider",
+    responsive: [
+      {
+        breakpoint: 961,
+        settings: "unslick",
+      },
+    ],
   });
   $(".surf-slider").slick({
     slidesToShow: 4,
@@ -22,6 +28,34 @@ $(function () {
     nextArrow:
       ' <img class="slider-arrows slider-arrows__right" src="img/arrow-right.svg" alt="" />',
     asNavFor: ".slider-map, .travel .holder__slider, .sleep .holder__slider",
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 475,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+    ],
   });
   $(".slider-map").slick({
     slidesToShow: 8,
@@ -29,6 +63,35 @@ $(function () {
     arrows: false,
     asNavFor: ".surf-slider, .travel .holder__slider, .sleep .holder__slider",
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1103,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+      // {
+      //   breakpoint: 375,
+      //   settings: {
+      //     slidesToShow: 1,
+      //     centerMode: false,
+      //   },
+      // },
+    ],
   });
   $(".travel .holder__slider").slick({
     infinite: true,
@@ -108,5 +171,9 @@ $(function () {
       $(".surfboard-box__circle.active").toggleClass("active");
     }
     $(this).toggleClass("active");
+  });
+
+  $(".menu-btn").on("click", function () {
+    $(".menu").toggleClass("active");
   });
 });
