@@ -84,13 +84,6 @@ $(function () {
           centerMode: true,
         },
       },
-      // {
-      //   breakpoint: 375,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     centerMode: false,
-      //   },
-      // },
     ],
   });
   $(".travel .holder__slider").slick({
@@ -175,5 +168,9 @@ $(function () {
 
   $(".menu-btn").on("click", function () {
     $(".menu").toggleClass("active");
+  });
+
+  AOS.init({
+    once: true,
   });
 });
